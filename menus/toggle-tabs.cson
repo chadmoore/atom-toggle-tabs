@@ -1,0 +1,16 @@
+# See https://atom.io/docs/latest/creating-a-package#menus for more details
+'context-menu':
+  '.overlayer':
+      'Enable toggle-tabs': 'toggle-tabs:toggle'
+
+'menu': [
+  {
+    'label': 'Packages'
+    'submenu': [
+      'label': 'toggle-tabs'
+      'submenu': [
+        { 'label': 'Toggle', 'command': 'toggle-tabs:toggle' }
+      ]
+    ]
+  }
+]
