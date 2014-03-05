@@ -3,7 +3,7 @@
   "main": "./lib/toggle-tabs",
   "version": "0.1.0",
   "private": true,
-  "description": "A short description of your package",
+  "description": "Toggle tab visiblity easily"
   "activationEvents": [
     "toggle-tabs:toggle"
   ],
