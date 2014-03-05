@@ -5,7 +5,7 @@
   "private": true,
   "description": "A short description of your package",
   "activationEvents": ["toggle-tabs:toggle"],
-  "repository": "https://github.com/atom/toggle-tabs",
+  "repository": "https://github.com/chadmoore/atom-toggle-tabs",
   "license": "MIT",
   "engines": {
     "atom": ">0.50.0"
