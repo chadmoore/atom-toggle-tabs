@@ -6,17 +6,15 @@ describe "ToggleTabs", ->
 
   beforeEach ->
     atom.workspaceView = new WorkspaceView
-    activationPromise = atom.packages.activatePackage('toggle-tabs')
+    @tabBar = atom.workspaceView.find('.tab-bar')
 
   describe 'when the toggle-tabs:toggle event is triggered', ->
-    it 'shows and hides the .tab-bar', ->
-      expect(atom.workspaceView.find('.tab-bar:visible').length).toBe(1)
+    it 'toggles the visibility of the tabBar', ->
+      expect(@tabBar).toBeVisible
       atom.workspaceView.trigger 'toggle-tabs:toggle'
+      expect(@tabBar).toBeHidden
+      atom.workspaceView.trigger 'toggle-tabs:toggle'
+      expect(@tabBar).toBeVisible
 
-      waitsForPromise ->
-        activationPromise
-
-      runs ->
-        expect(atom.workspaceView.find('.tab-bar:visible').length).toBe(0)
-        atom.workspaceView.trigger 'toggle-tabs:toggle'
-        expect(atom.workspaceView.find('.tab-bar:visible').length).toBe(1)
+  # describe 'the hideTabsByDefault config option', ->
+  #   it 'shows and hides the tabs by default based on the option value', ->
