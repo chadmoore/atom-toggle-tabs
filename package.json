@@ -1,7 +1,7 @@
 {
   "name": "toggle-tabs",
   "main": "./lib/toggle-tabs",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "Toggle tab visiblity easily or hide them by default. (cmd+b still works for buffer switching)",
   "repository": "https://github.com/chadmoore/atom-toggle-tabs",
   "license": "MIT",
