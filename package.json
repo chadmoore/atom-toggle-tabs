@@ -2,7 +2,7 @@
   "name": "toggle-tabs",
   "main": "./lib/toggle-tabs",
   "version": "0.1.6",
-  "description": "Toggle tab visiblity easily, or hide by default",
+  "description": "Toggle tab visiblity easily (fixed)",
   "repository": "https://github.com/chadmoore/atom-toggle-tabs",
   "license": "MIT",
   "engines": {

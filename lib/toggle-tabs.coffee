@@ -1,12 +1,18 @@
 module.exports =
   configDefaults:
-    hideTabsByDefault: false
+    hideTabs: false
 
   activate: ->
-    atom.workspaceView.find('.tab-bar').toggle(
-      !atom.config.get('toggle-tabs.hideTabsByDefault')
-    )
+    atom.workspaceView.ready ->
+      atom.workspaceView.find('.tab-bar').toggle(!atom.config.get('toggle-tabs.hideTabs'))
+
     atom.workspaceView.command "toggle-tabs:toggle", => @toggle()
+    atom.config.observe 'toggle-tabs.hideTabs', =>
+      current = atom.config.get('toggle-tabs.hideTabs')
+      if current
+        atom.workspaceView.find('.tab-bar').hide(150)
+      else
+        atom.workspaceView.find('.tab-bar').show(150)
 
   toggle: ->
-    atom.workspaceView.find('.tab-bar').slideToggle(150)
+    atom.config.set 'toggle-tabs.hideTabs', !atom.config.get('toggle-tabs.hideTabs')
